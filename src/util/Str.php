@@ -42,4 +42,18 @@ class Str
         $data[8] = chr(ord($data[8]) & 0x3f | 0x80); // 设置变体为 RFC 4122
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
+
+    /**
+     * 从身份证号码中提取生日，返回格式yyyy-mm-dd
+     *
+     * @param $idCardNo
+     * @return string
+     */
+    public static function getBirthdayFromIdCardNo($idCardNo)
+    {
+        $birthdayYear = substr($idCardNo, 6, 4);
+        $birthdayMonth = substr($idCardNo, 10, 2);
+        $birthdayDay = substr($idCardNo, 12, 2);
+        return $birthdayYear . "-" . $birthdayMonth . "-" . $birthdayDay;
+    }
 }
