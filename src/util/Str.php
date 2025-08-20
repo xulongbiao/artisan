@@ -56,4 +56,29 @@ class Str
         $birthdayDay = substr($idCardNo, 12, 2);
         return $birthdayYear . "-" . $birthdayMonth . "-" . $birthdayDay;
     }
+
+    /**
+     * 检测字符串是否为JSON
+     *
+     * @param  mixed  $value
+     * @return bool
+     */
+    public static function isJson($value)
+    {
+        if (! is_string($value)) {
+            return false;
+        }
+
+        if (function_exists('json_validate')) {
+            return json_validate($value, 512);
+        }
+
+        try {
+            json_decode($value, true, 512, JSON_THROW_ON_ERROR);
+        } catch (\Exception $e) {
+            return false;
+        }
+
+        return true;
+    }
 }
