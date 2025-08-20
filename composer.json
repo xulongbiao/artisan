@@ -18,5 +18,6 @@
             "email": "515676737@qq.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "version": "1.0.0"
 }
