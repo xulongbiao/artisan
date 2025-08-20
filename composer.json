@@ -1,0 +1,21 @@
+{
+    "name": "xulongbiao/artisan",
+    "description": "php development tool package",
+    "type": "library",
+    "require": {
+        "php": ">=7.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "util": "src/util"
+        }
+    },
+    "authors": [
+        {
+            "name": "xulongbiao",
+            "email": "515676737@qq.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
