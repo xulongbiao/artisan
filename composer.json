@@ -8,7 +8,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "util": "src/util"
+            "util\\": "src/util"
         }
     },
     "authors": [
