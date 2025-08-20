@@ -29,4 +29,17 @@ class Str
             return $string;
         })($length);
     }
+
+    /**
+     * 生成UUID
+     *
+     * @return string
+     */
+    public static function getUUID()
+    {
+        $data = random_bytes(16);
+        $data[6] = chr(ord($data[6]) & 0x0f | 0x40); // 设置版本为 4
+        $data[8] = chr(ord($data[8]) & 0x3f | 0x80); // 设置变体为 RFC 4122
+        return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+    }
 }
